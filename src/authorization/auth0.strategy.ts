@@ -10,7 +10,7 @@ export class Auth0Strategy extends PassportStrategy(Strategy, 'auth0') {
       clientID: 'nGRNKr7AFy3woR1u2d2hvRSjuVvjMW5S',
       clientSecret:
         'TjOfh5j7hMiXQlUQK6tVdcLzf5fo5jt_vr2K1LFXu2AZFghKSaLRX600symfHOxk',
-      callbackURL: 'http://localhost:3000/',
+      callbackURL: 'https://melodious-meerkat-67a2b8.netlify.app/',
     });
   }
 
