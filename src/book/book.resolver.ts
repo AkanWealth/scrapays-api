@@ -1,15 +1,13 @@
-import { NotFoundException, UseGuards } from '@nestjs/common';
+import { NotFoundException } from '@nestjs/common';
 import { BookService } from './book.service';
 import { Book } from './entities/book.entity';
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
-import { AuthorizationGuard } from 'src/authorization/authorization.guard';
 
 @Resolver(() => Book)
 export class BookResolver {
   constructor(private readonly bookService: BookService) {}
 
   @Query(() => Book)
-  @UseGuards(AuthorizationGuard)
   async getBook(@Args('id') id: number) {
     try {
       return this.bookService.findOne(id);
